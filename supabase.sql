@@ -1,12 +1,12 @@
 -- Supabase / PostgreSQL initial setup. Run the complete file in SQL Editor.
--- Creates eight tables and their sample data in sql_demo, in one transaction.
+-- Creates eight tables and their sample data in microuniversity, in one transaction.
 -- Existing tables cause an error and rollback; this does not reset student work.
 BEGIN;
-CREATE SCHEMA IF NOT EXISTS sql_demo;
+CREATE SCHEMA IF NOT EXISTS microuniversity;
 -- Explicit schema names keep this script independent of the session search_path.
 
 
-CREATE TABLE sql_demo.employee (
+CREATE TABLE microuniversity.employee (
   EMP_NUM INTEGER PRIMARY KEY NOT NULL,
   EMP_LNAME VARCHAR(30) NOT NULL,
   EMP_FNAME VARCHAR(20) NOT NULL,
@@ -15,164 +15,164 @@ CREATE TABLE sql_demo.employee (
   EMP_HIREDATE DATE NOT NULL,
   EMP_DOB DATE NOT NULL
 );
-INSERT INTO sql_demo.employee VALUES(100,'Worley','James','F','CUST','1978-02-23','1950-06-12');
-INSERT INTO sql_demo.employee VALUES(101,'Ramso','Henry','B','CUST','1994-11-15','1961-11-02');
-INSERT INTO sql_demo.employee VALUES(102,'Edwards','Rosemary','D','TECH','1990-07-23','1953-07-03');
-INSERT INTO sql_demo.employee VALUES(103,'Donelly','Ronald','O','PROF','1987-07-01','1952-10-02');
-INSERT INTO sql_demo.employee VALUES(104,'Yukon','Preston','D','PROF','1992-05-01','1948-02-23');
-INSERT INTO sql_demo.employee VALUES(105,'Heffington','Arnelle','B','PROF','1991-07-01','1950-11-02');
-INSERT INTO sql_demo.employee VALUES(106,'Washington','Ross','E','PROF','1976-08-01','1941-03-04');
-INSERT INTO sql_demo.employee VALUES(108,'Robertson','Elaine','W','TECH','1983-10-18','1961-06-20');
-INSERT INTO sql_demo.employee VALUES(110,'Thieu','Van','S','PROF','1989-08-01','1951-08-12');
-INSERT INTO sql_demo.employee VALUES(114,'Graztevski','Gerald','B','PROF','1978-08-01','1939-03-18');
-INSERT INTO sql_demo.employee VALUES(122,'Wilson','Todd','H','CUST','1990-11-06','1966-10-19');
-INSERT INTO sql_demo.employee VALUES(123,'Jones','Suzanne','B','TECH','1994-01-05','1967-12-30');
-INSERT INTO sql_demo.employee VALUES(124,'Smith','Elsa','K','CLRK','1982-12-16','1943-09-13');
-INSERT INTO sql_demo.employee VALUES(126,'Ardano','James','G','CLRK','1994-10-01','1970-03-12');
-INSERT INTO sql_demo.employee VALUES(155,'Ritula','Annelise',NULL,'PROF','1990-08-01','1957-05-24');
-INSERT INTO sql_demo.employee VALUES(160,'Smith','Robert','T','PROF','1992-08-01','1955-06-19');
-INSERT INTO sql_demo.employee VALUES(161,'Watson','George','F','CUST','1994-11-01','1962-10-02');
-INSERT INTO sql_demo.employee VALUES(162,'Rob','Peter',NULL,'PROF','1981-08-01','1940-06-20');
-INSERT INTO sql_demo.employee VALUES(165,'Williamson','Kathryn','A','CLRK','1992-06-15','1968-11-17');
-INSERT INTO sql_demo.employee VALUES(166,'Herndon','Jill','M','TECH','1990-08-18','1965-08-29');
-INSERT INTO sql_demo.employee VALUES(173,'Teng','Weston','J','TECH','1980-07-15','1951-11-17');
-INSERT INTO sql_demo.employee VALUES(191,'Dexter','Willa','N','PROF','1984-08-01','1953-05-17');
-INSERT INTO sql_demo.employee VALUES(195,'Williams','Herman','H','PROF','1988-08-01','1955-11-19');
-INSERT INTO sql_demo.employee VALUES(209,'Smith','Melanie','K','PROF','1983-08-01','1946-05-24');
-INSERT INTO sql_demo.employee VALUES(228,'Coronel','Carlos','M','PROF','1988-08-01','1949-05-16');
-INSERT INTO sql_demo.employee VALUES(231,'Shebert','Rebecca','A','CUST','1994-02-21','1963-02-27');
-INSERT INTO sql_demo.employee VALUES(297,'Jones','Hermine',NULL,'PROF','1985-01-01','1950-07-04');
-INSERT INTO sql_demo.employee VALUES(299,'Stoddard','Doreen','L','PROF','1994-08-01','1960-04-25');
-INSERT INTO sql_demo.employee VALUES(301,'Osaki','Ismael','K','PROF','1989-08-01','1952-05-25');
-INSERT INTO sql_demo.employee VALUES(333,'Jordan','Julian','H','TECH','1991-04-23','1968-07-16');
-INSERT INTO sql_demo.employee VALUES(335,'Okomoto','Ronald','F','PROF','1975-08-01','1944-03-03');
-INSERT INTO sql_demo.employee VALUES(342,'Smith','Robert','A','PROF','1978-08-01','1937-12-30');
-INSERT INTO sql_demo.employee VALUES(387,'Smithson','George','D','PROF','1982-08-01','1948-10-01');
-INSERT INTO sql_demo.employee VALUES(401,'Blalock','James','G','PROF','1981-08-01','1945-03-15');
-INSERT INTO sql_demo.employee VALUES(412,'Smith','Robert','E','CUST','1985-06-24','1963-09-25');
-INSERT INTO sql_demo.employee VALUES(425,'Matler','Ralph','F','PROF','1995-08-01','1973-12-02');
-INSERT INTO sql_demo.employee VALUES(435,'Doornberg','Anne','D','PROF','1992-08-01','1963-10-02');
-CREATE TABLE sql_demo.school (
+INSERT INTO microuniversity.employee VALUES(100,'Worley','James','F','CUST','1978-02-23','1950-06-12');
+INSERT INTO microuniversity.employee VALUES(101,'Ramso','Henry','B','CUST','1994-11-15','1961-11-02');
+INSERT INTO microuniversity.employee VALUES(102,'Edwards','Rosemary','D','TECH','1990-07-23','1953-07-03');
+INSERT INTO microuniversity.employee VALUES(103,'Donelly','Ronald','O','PROF','1987-07-01','1952-10-02');
+INSERT INTO microuniversity.employee VALUES(104,'Yukon','Preston','D','PROF','1992-05-01','1948-02-23');
+INSERT INTO microuniversity.employee VALUES(105,'Heffington','Arnelle','B','PROF','1991-07-01','1950-11-02');
+INSERT INTO microuniversity.employee VALUES(106,'Washington','Ross','E','PROF','1976-08-01','1941-03-04');
+INSERT INTO microuniversity.employee VALUES(108,'Robertson','Elaine','W','TECH','1983-10-18','1961-06-20');
+INSERT INTO microuniversity.employee VALUES(110,'Thieu','Van','S','PROF','1989-08-01','1951-08-12');
+INSERT INTO microuniversity.employee VALUES(114,'Graztevski','Gerald','B','PROF','1978-08-01','1939-03-18');
+INSERT INTO microuniversity.employee VALUES(122,'Wilson','Todd','H','CUST','1990-11-06','1966-10-19');
+INSERT INTO microuniversity.employee VALUES(123,'Jones','Suzanne','B','TECH','1994-01-05','1967-12-30');
+INSERT INTO microuniversity.employee VALUES(124,'Smith','Elsa','K','CLRK','1982-12-16','1943-09-13');
+INSERT INTO microuniversity.employee VALUES(126,'Ardano','James','G','CLRK','1994-10-01','1970-03-12');
+INSERT INTO microuniversity.employee VALUES(155,'Ritula','Annelise',NULL,'PROF','1990-08-01','1957-05-24');
+INSERT INTO microuniversity.employee VALUES(160,'Smith','Robert','T','PROF','1992-08-01','1955-06-19');
+INSERT INTO microuniversity.employee VALUES(161,'Watson','George','F','CUST','1994-11-01','1962-10-02');
+INSERT INTO microuniversity.employee VALUES(162,'Rob','Peter',NULL,'PROF','1981-08-01','1940-06-20');
+INSERT INTO microuniversity.employee VALUES(165,'Williamson','Kathryn','A','CLRK','1992-06-15','1968-11-17');
+INSERT INTO microuniversity.employee VALUES(166,'Herndon','Jill','M','TECH','1990-08-18','1965-08-29');
+INSERT INTO microuniversity.employee VALUES(173,'Teng','Weston','J','TECH','1980-07-15','1951-11-17');
+INSERT INTO microuniversity.employee VALUES(191,'Dexter','Willa','N','PROF','1984-08-01','1953-05-17');
+INSERT INTO microuniversity.employee VALUES(195,'Williams','Herman','H','PROF','1988-08-01','1955-11-19');
+INSERT INTO microuniversity.employee VALUES(209,'Smith','Melanie','K','PROF','1983-08-01','1946-05-24');
+INSERT INTO microuniversity.employee VALUES(228,'Coronel','Carlos','M','PROF','1988-08-01','1949-05-16');
+INSERT INTO microuniversity.employee VALUES(231,'Shebert','Rebecca','A','CUST','1994-02-21','1963-02-27');
+INSERT INTO microuniversity.employee VALUES(297,'Jones','Hermine',NULL,'PROF','1985-01-01','1950-07-04');
+INSERT INTO microuniversity.employee VALUES(299,'Stoddard','Doreen','L','PROF','1994-08-01','1960-04-25');
+INSERT INTO microuniversity.employee VALUES(301,'Osaki','Ismael','K','PROF','1989-08-01','1952-05-25');
+INSERT INTO microuniversity.employee VALUES(333,'Jordan','Julian','H','TECH','1991-04-23','1968-07-16');
+INSERT INTO microuniversity.employee VALUES(335,'Okomoto','Ronald','F','PROF','1975-08-01','1944-03-03');
+INSERT INTO microuniversity.employee VALUES(342,'Smith','Robert','A','PROF','1978-08-01','1937-12-30');
+INSERT INTO microuniversity.employee VALUES(387,'Smithson','George','D','PROF','1982-08-01','1948-10-01');
+INSERT INTO microuniversity.employee VALUES(401,'Blalock','James','G','PROF','1981-08-01','1945-03-15');
+INSERT INTO microuniversity.employee VALUES(412,'Smith','Robert','E','CUST','1985-06-24','1963-09-25');
+INSERT INTO microuniversity.employee VALUES(425,'Matler','Ralph','F','PROF','1995-08-01','1973-12-02');
+INSERT INTO microuniversity.employee VALUES(435,'Doornberg','Anne','D','PROF','1992-08-01','1963-10-02');
+CREATE TABLE microuniversity.school (
   SCHOOL_CODE VARCHAR(10) PRIMARY KEY  NOT NULL,
   EMP_NUM INTEGER NOT NULL,
   SCHOOL_ADDRESS VARCHAR(150) NOT NULL,
   SCHOOL_OFFICE VARCHAR(15) NOT NULL,
   SCHOOL_EXTENSION VARCHAR(4) NOT NULL,
-  FOREIGN KEY(EMP_NUM) REFERENCES sql_demo.employee(EMP_NUM)
+  FOREIGN KEY(EMP_NUM) REFERENCES microuniversity.employee(EMP_NUM)
 );
-INSERT INTO sql_demo.school VALUES('A&SCI',335,'Box 200','DRE 208','2000');
-INSERT INTO sql_demo.school VALUES('BUS',228,'Box 300','KLR 300','3000');
-CREATE TABLE sql_demo.department (
+INSERT INTO microuniversity.school VALUES('A&SCI',335,'Box 200','DRE 208','2000');
+INSERT INTO microuniversity.school VALUES('BUS',228,'Box 300','KLR 300','3000');
+CREATE TABLE microuniversity.department (
   DEPT_CODE VARCHAR(10) PRIMARY KEY NOT NULL,
   DEPT_NAME VARCHAR (40) NOT NULL,
   SCHOOL_CODE VARCHAR(10) NOT NULL,
   EMP_NUM INTEGER NOT NULL,
   DEPT_ADDRESS VARCHAR(150) NOT NULL,
   DEPT_EXTENSION VARCHAR(4) NOT NULL,
-  FOREIGN KEY(SCHOOL_CODE) REFERENCES sql_demo.school(SCHOOL_CODE),
-  FOREIGN KEY(EMP_NUM) REFERENCES sql_demo.employee(EMP_NUM)
+  FOREIGN KEY(SCHOOL_CODE) REFERENCES microuniversity.school(SCHOOL_CODE),
+  FOREIGN KEY(EMP_NUM) REFERENCES microuniversity.employee(EMP_NUM)
 );
-INSERT INTO sql_demo.department VALUES('ACCT','Accounting','BUS',114,'KLR 211, Box 52','3119');
-INSERT INTO sql_demo.department VALUES('ART','Fine Arts','A&SCI',435,'BBG 185, Box 128','2278');
-INSERT INTO sql_demo.department VALUES('BIOL','Biology','A&SCI',387,'AAK 230, Box 415','4117');
-INSERT INTO sql_demo.department VALUES('CIS','Computer Info. Systems','BUS',209,'KLR 333, Box 56','3245');
-INSERT INTO sql_demo.department VALUES('ECON/FIN','Economics/Finance','BUS',299,'KLR 284, Box 63','3126');
-INSERT INTO sql_demo.department VALUES('ENG','English','A&SCI',160,'DRE 102, Box 223','1004');
-INSERT INTO sql_demo.department VALUES('HIST','History','A&SCI',103,'DRE 156, Box 284','1867');
-INSERT INTO sql_demo.department VALUES('MATH','Mathematics','A&SCI',297,'AAK 194, Box 422','4234');
-INSERT INTO sql_demo.department VALUES('MKT/MGT','Marketing/Management','BUS',106,'KLR 126, Box 55','3342');
-INSERT INTO sql_demo.department VALUES('PSYCH','Psychology','A&SCI',195,'AAK 297, Box 438','4110');
-INSERT INTO sql_demo.department VALUES('SOC','Sociology','A&SCI',342,'BBG 208, Box 132','2008');
-CREATE TABLE sql_demo.course (
+INSERT INTO microuniversity.department VALUES('ACCT','Accounting','BUS',114,'KLR 211, Box 52','3119');
+INSERT INTO microuniversity.department VALUES('ART','Fine Arts','A&SCI',435,'BBG 185, Box 128','2278');
+INSERT INTO microuniversity.department VALUES('BIOL','Biology','A&SCI',387,'AAK 230, Box 415','4117');
+INSERT INTO microuniversity.department VALUES('CIS','Computer Info. Systems','BUS',209,'KLR 333, Box 56','3245');
+INSERT INTO microuniversity.department VALUES('ECON/FIN','Economics/Finance','BUS',299,'KLR 284, Box 63','3126');
+INSERT INTO microuniversity.department VALUES('ENG','English','A&SCI',160,'DRE 102, Box 223','1004');
+INSERT INTO microuniversity.department VALUES('HIST','History','A&SCI',103,'DRE 156, Box 284','1867');
+INSERT INTO microuniversity.department VALUES('MATH','Mathematics','A&SCI',297,'AAK 194, Box 422','4234');
+INSERT INTO microuniversity.department VALUES('MKT/MGT','Marketing/Management','BUS',106,'KLR 126, Box 55','3342');
+INSERT INTO microuniversity.department VALUES('PSYCH','Psychology','A&SCI',195,'AAK 297, Box 438','4110');
+INSERT INTO microuniversity.department VALUES('SOC','Sociology','A&SCI',342,'BBG 208, Box 132','2008');
+CREATE TABLE microuniversity.course (
   CRS_CODE VARCHAR(25) PRIMARY KEY NOT NULL,
   DEPT_CODE VARCHAR(10) NOT NULL,
   CRS_DESCRIPTION VARCHAR(255) NOT NULL,
   CRS_CREDIT NUMERIC(4,1) NOT NULL CHECK (CRS_CREDIT > 0),
-  FOREIGN KEY(DEPT_CODE) REFERENCES sql_demo.department(DEPT_CODE)
+  FOREIGN KEY(DEPT_CODE) REFERENCES microuniversity.department(DEPT_CODE)
 );
-INSERT INTO sql_demo.course VALUES('ACCT-211','ACCT','Accounting I',3.0);
-INSERT INTO sql_demo.course VALUES('ACCT-212','ACCT','Accounting II',3.0);
-INSERT INTO sql_demo.course VALUES('ACCT-311','ACCT','Managerial Accounting',3.0);
-INSERT INTO sql_demo.course VALUES('ART-210','ART','Intro. to Art',3.0);
-INSERT INTO sql_demo.course VALUES('ART-340','ART','Jewelry Design',3.0);
-INSERT INTO sql_demo.course VALUES('BIOL-120','BIOL','Intro. to Biology',4.0);
-INSERT INTO sql_demo.course VALUES('BIOL-220','BIOL','Biology and the Environment',4.0);
-INSERT INTO sql_demo.course VALUES('CIS-220','CIS','Intro. to Microcomputing',3.0);
-INSERT INTO sql_demo.course VALUES('CIS-320','CIS','Spreadsheet Applications',3.0);
-INSERT INTO sql_demo.course VALUES('CIS-370','CIS','Intro. to Systems Analysis',3.0);
-INSERT INTO sql_demo.course VALUES('CIS-420','CIS','Database Design and Implementation',4.0);
-INSERT INTO sql_demo.course VALUES('ECON-240','ECON/FIN','Microeconomics',3.0);
-INSERT INTO sql_demo.course VALUES('ECON-250','ECON/FIN','Macroeconomics',3.0);
-INSERT INTO sql_demo.course VALUES('ENG-210','ENG','Writing',3.0);
-INSERT INTO sql_demo.course VALUES('ENG-220','ENG','Literature',3.0);
-INSERT INTO sql_demo.course VALUES('FIN-300','ECON/FIN','Money and Banking',3.0);
-INSERT INTO sql_demo.course VALUES('HIST-210','HIST','U.S. History Through the 1800s',3.0);
-INSERT INTO sql_demo.course VALUES('HIST-220','HIST','U.S. History Through the 1900s',3.0);
-INSERT INTO sql_demo.course VALUES('MATH-120','MATH','College Algebra I',3.0);
-INSERT INTO sql_demo.course VALUES('MATH-240','MATH','Intro. to Calculus',4.0);
-INSERT INTO sql_demo.course VALUES('MATH-243','MATH','Mathematics for Managers',3.0);
-INSERT INTO sql_demo.course VALUES('MGT-340','MKT/MGT','Intro. to Management',3.0);
-INSERT INTO sql_demo.course VALUES('MKT-360','MKT/MGT','Intro. to Marketing',3.0);
-INSERT INTO sql_demo.course VALUES('PSYCH-200','PSYCH','Intro. to Psychology',3.0);
-INSERT INTO sql_demo.course VALUES('QM-261','CIS','Intro. to Statistics',3.0);
-INSERT INTO sql_demo.course VALUES('QM-362','CIS','Statistical Applications',4.0);
-INSERT INTO sql_demo.course VALUES('SOC-200','SOC','Intro. to Sociology',3.0);
-INSERT INTO sql_demo.course VALUES('SPCH-240','ENG','Public Speaking',3.0);
-CREATE TABLE sql_demo.class (
+INSERT INTO microuniversity.course VALUES('ACCT-211','ACCT','Accounting I',3.0);
+INSERT INTO microuniversity.course VALUES('ACCT-212','ACCT','Accounting II',3.0);
+INSERT INTO microuniversity.course VALUES('ACCT-311','ACCT','Managerial Accounting',3.0);
+INSERT INTO microuniversity.course VALUES('ART-210','ART','Intro. to Art',3.0);
+INSERT INTO microuniversity.course VALUES('ART-340','ART','Jewelry Design',3.0);
+INSERT INTO microuniversity.course VALUES('BIOL-120','BIOL','Intro. to Biology',4.0);
+INSERT INTO microuniversity.course VALUES('BIOL-220','BIOL','Biology and the Environment',4.0);
+INSERT INTO microuniversity.course VALUES('CIS-220','CIS','Intro. to Microcomputing',3.0);
+INSERT INTO microuniversity.course VALUES('CIS-320','CIS','Spreadsheet Applications',3.0);
+INSERT INTO microuniversity.course VALUES('CIS-370','CIS','Intro. to Systems Analysis',3.0);
+INSERT INTO microuniversity.course VALUES('CIS-420','CIS','Database Design and Implementation',4.0);
+INSERT INTO microuniversity.course VALUES('ECON-240','ECON/FIN','Microeconomics',3.0);
+INSERT INTO microuniversity.course VALUES('ECON-250','ECON/FIN','Macroeconomics',3.0);
+INSERT INTO microuniversity.course VALUES('ENG-210','ENG','Writing',3.0);
+INSERT INTO microuniversity.course VALUES('ENG-220','ENG','Literature',3.0);
+INSERT INTO microuniversity.course VALUES('FIN-300','ECON/FIN','Money and Banking',3.0);
+INSERT INTO microuniversity.course VALUES('HIST-210','HIST','U.S. History Through the 1800s',3.0);
+INSERT INTO microuniversity.course VALUES('HIST-220','HIST','U.S. History Through the 1900s',3.0);
+INSERT INTO microuniversity.course VALUES('MATH-120','MATH','College Algebra I',3.0);
+INSERT INTO microuniversity.course VALUES('MATH-240','MATH','Intro. to Calculus',4.0);
+INSERT INTO microuniversity.course VALUES('MATH-243','MATH','Mathematics for Managers',3.0);
+INSERT INTO microuniversity.course VALUES('MGT-340','MKT/MGT','Intro. to Management',3.0);
+INSERT INTO microuniversity.course VALUES('MKT-360','MKT/MGT','Intro. to Marketing',3.0);
+INSERT INTO microuniversity.course VALUES('PSYCH-200','PSYCH','Intro. to Psychology',3.0);
+INSERT INTO microuniversity.course VALUES('QM-261','CIS','Intro. to Statistics',3.0);
+INSERT INTO microuniversity.course VALUES('QM-362','CIS','Statistical Applications',4.0);
+INSERT INTO microuniversity.course VALUES('SOC-200','SOC','Intro. to Sociology',3.0);
+INSERT INTO microuniversity.course VALUES('SPCH-240','ENG','Public Speaking',3.0);
+CREATE TABLE microuniversity.class (
   CLASS_CODE INTEGER PRIMARY KEY NOT NULL,
   CRS_CODE VARCHAR(25) NOT NULL,
   CLASS_SECTION INTEGER NOT NULL,
   CLASS_TIME VARCHAR(30) NOT NULL,
   CLASS_ROOM VARCHAR(15) NOT NULL,
   EMP_NUM INTEGER NOT NULL,
-  FOREIGN KEY(CRS_CODE) REFERENCES sql_demo.course(CRS_CODE),
-  FOREIGN KEY(EMP_NUM) REFERENCES sql_demo.employee(EMP_NUM)
+  FOREIGN KEY(CRS_CODE) REFERENCES microuniversity.course(CRS_CODE),
+  FOREIGN KEY(EMP_NUM) REFERENCES microuniversity.employee(EMP_NUM)
 );
-INSERT INTO sql_demo.class VALUES(10012,'ACCT-211',1,'MWF 8:00-8:50 a.m.','KLR 225',105);
-INSERT INTO sql_demo.class VALUES(10013,'ACCT-211',2,'MWF 9:00-9:50 a.m.','KLR 225',105);
-INSERT INTO sql_demo.class VALUES(10014,'ACCT-211',3,'TTh 2:30-3:45 p.m.','KLR 225',342);
-INSERT INTO sql_demo.class VALUES(10015,'ACCT-212',1,'MWF 10:00-10:50 a.m.','KLR 240',301);
-INSERT INTO sql_demo.class VALUES(10016,'ACCT-212',2,'Th 6:00-8:40 p.m.','KLR 240',301);
-INSERT INTO sql_demo.class VALUES(10017,'ACCT-311',1,'TTh 3:30-4:45 p.m.','KLR 240',114);
-INSERT INTO sql_demo.class VALUES(12001,'ART-210',1,'MWF 8:00-8:50 a.m.','BBG 120',435);
-INSERT INTO sql_demo.class VALUES(12002,'ART-340',1,'MWF 10:00-10:50 a.m.','BBG 143',435);
-INSERT INTO sql_demo.class VALUES(15020,'BIOL-120',1,'TTh 12:30-1:45 p.m.','AAK 166',110);
-INSERT INTO sql_demo.class VALUES(15021,'BIOL-120',2,'Tue 6:00-8:40 p.m.','AAK 156',110);
-INSERT INTO sql_demo.class VALUES(15022,'BIOL-120',3,'MWF 1:00-1:50 p.m.','AAK 156',387);
-INSERT INTO sql_demo.class VALUES(15030,'BIOL-220',1,'MWF 2:00-2:50 p.m.','AAK 172',387);
-INSERT INTO sql_demo.class VALUES(20017,'CIS-220',1,'MWF 9:00-9:50 a.m.','KLR 209',228);
-INSERT INTO sql_demo.class VALUES(20018,'CIS-220',2,'MWF 9:00-9:50 a.m.','KLR 211',162);
-INSERT INTO sql_demo.class VALUES(20019,'CIS-220',3,'MWF 10:00-10:50 a.m.','KLR 209',228);
-INSERT INTO sql_demo.class VALUES(20025,'CIS-320',1,'MWF 10:00-10:50 a.m.','KLR 211',228);
-INSERT INTO sql_demo.class VALUES(20030,'CIS-370',1,'MWF 11:00-11:50 a.m.','KLR 209',209);
-INSERT INTO sql_demo.class VALUES(20031,'CIS-370',2,'Tue 6:00-8:40 p.m.','KLR 211',209);
-INSERT INTO sql_demo.class VALUES(20040,'CIS-420',1,'Wed 6:00-8:40 p.m.','KLR 209',162);
-INSERT INTO sql_demo.class VALUES(22010,'ECON-240',1,'MWF 8:00-8:50 a.m.','KLR 290',299);
-INSERT INTO sql_demo.class VALUES(22011,'ECON-240',2,'TTh 3:30-4:45 p.m.','KLR 290',425);
-INSERT INTO sql_demo.class VALUES(22020,'ECON-250',1,'Wed 6:00-8:40 p.m.','KLR 290',299);
-INSERT INTO sql_demo.class VALUES(23110,'MGT-340',1,'TTh 8:00-9:15 a.m.','KLR 152',191);
-INSERT INTO sql_demo.class VALUES(23111,'MGT-340',2,'Mon 6:00-8:40 p.m.','KLR 152',191);
-INSERT INTO sql_demo.class VALUES(23120,'MKT-360',1,'MWF 10:00-10:50 a.m.','KLR 152',191);
-INSERT INTO sql_demo.class VALUES(23121,'MKT-360',2,'Th 6:00-8:40 p.m.','KLR 152',106);
-INSERT INTO sql_demo.class VALUES(25000,'ENG-210',1,'MWF 1:00-1:50 p.m.','DRE 257',104);
-INSERT INTO sql_demo.class VALUES(25001,'ENG-210',2,'MWF 2:00-2:50 p.m.','DRE 257',104);
-INSERT INTO sql_demo.class VALUES(25002,'ENG-210',3,'TTH 12:30-1:45 p.m.','DRE 257',160);
-INSERT INTO sql_demo.class VALUES(25010,'SPCH-240',1,'MWF 8:00-8:50 a.m.','DRE 242',104);
-INSERT INTO sql_demo.class VALUES(25011,'SPCH-240',2,'TTh 3:30-4:45 p.m.','DRE 242',104);
-INSERT INTO sql_demo.class VALUES(30010,'PSYCH-200',1,'MWF 11:00-11:50 a.m.','AAK 244',195);
-INSERT INTO sql_demo.class VALUES(30110,'SOC-200',1,'TTH 8:00-9:15 a.m.','BBG 258',342);
-INSERT INTO sql_demo.class VALUES(32000,'HIST-210',1,'MWF 10:00-10:50 a.m.','DRE 144',103);
-INSERT INTO sql_demo.class VALUES(32001,'HIST-210',2,'MWF 1:00-1:50 p.m.','DRE 144',401);
-INSERT INTO sql_demo.class VALUES(32002,'HIST-210',3,'TTH 2:00-3:15 p.m.','DRE 144',401);
-INSERT INTO sql_demo.class VALUES(32011,'HIST-220',1,'MWF 11:00-11:50 a.m.','DRE 144',103);
-INSERT INTO sql_demo.class VALUES(40010,'MATH-120',1,'TTh 8:00-9:15 a.m.','AAK 200',155);
-INSERT INTO sql_demo.class VALUES(40011,'MATH-120',2,'MWF 11:00-11:50 a.m.','AAK 200',155);
-INSERT INTO sql_demo.class VALUES(40101,'MATH-243',1,'MWF 3:00-3:50 p.m.','AAK 202',297);
-INSERT INTO sql_demo.class VALUES(50021,'QM-261',1,'MWF 8:00-8:50 a.m.','KLR 200',228);
-INSERT INTO sql_demo.class VALUES(50022,'QM-261',2,'TTh 1:00-2:15 p.m.','KLR 200',228);
-INSERT INTO sql_demo.class VALUES(50023,'QM-362',1,'MWF 11:00-11:50 a.m.','KLR 200',162);
-INSERT INTO sql_demo.class VALUES(50024,'QM-362',2,'TTh 2:30-3:45 p.m.','KLR 200',162);
-CREATE TABLE sql_demo.student (
+INSERT INTO microuniversity.class VALUES(10012,'ACCT-211',1,'MWF 8:00-8:50 a.m.','KLR 225',105);
+INSERT INTO microuniversity.class VALUES(10013,'ACCT-211',2,'MWF 9:00-9:50 a.m.','KLR 225',105);
+INSERT INTO microuniversity.class VALUES(10014,'ACCT-211',3,'TTh 2:30-3:45 p.m.','KLR 225',342);
+INSERT INTO microuniversity.class VALUES(10015,'ACCT-212',1,'MWF 10:00-10:50 a.m.','KLR 240',301);
+INSERT INTO microuniversity.class VALUES(10016,'ACCT-212',2,'Th 6:00-8:40 p.m.','KLR 240',301);
+INSERT INTO microuniversity.class VALUES(10017,'ACCT-311',1,'TTh 3:30-4:45 p.m.','KLR 240',114);
+INSERT INTO microuniversity.class VALUES(12001,'ART-210',1,'MWF 8:00-8:50 a.m.','BBG 120',435);
+INSERT INTO microuniversity.class VALUES(12002,'ART-340',1,'MWF 10:00-10:50 a.m.','BBG 143',435);
+INSERT INTO microuniversity.class VALUES(15020,'BIOL-120',1,'TTh 12:30-1:45 p.m.','AAK 166',110);
+INSERT INTO microuniversity.class VALUES(15021,'BIOL-120',2,'Tue 6:00-8:40 p.m.','AAK 156',110);
+INSERT INTO microuniversity.class VALUES(15022,'BIOL-120',3,'MWF 1:00-1:50 p.m.','AAK 156',387);
+INSERT INTO microuniversity.class VALUES(15030,'BIOL-220',1,'MWF 2:00-2:50 p.m.','AAK 172',387);
+INSERT INTO microuniversity.class VALUES(20017,'CIS-220',1,'MWF 9:00-9:50 a.m.','KLR 209',228);
+INSERT INTO microuniversity.class VALUES(20018,'CIS-220',2,'MWF 9:00-9:50 a.m.','KLR 211',162);
+INSERT INTO microuniversity.class VALUES(20019,'CIS-220',3,'MWF 10:00-10:50 a.m.','KLR 209',228);
+INSERT INTO microuniversity.class VALUES(20025,'CIS-320',1,'MWF 10:00-10:50 a.m.','KLR 211',228);
+INSERT INTO microuniversity.class VALUES(20030,'CIS-370',1,'MWF 11:00-11:50 a.m.','KLR 209',209);
+INSERT INTO microuniversity.class VALUES(20031,'CIS-370',2,'Tue 6:00-8:40 p.m.','KLR 211',209);
+INSERT INTO microuniversity.class VALUES(20040,'CIS-420',1,'Wed 6:00-8:40 p.m.','KLR 209',162);
+INSERT INTO microuniversity.class VALUES(22010,'ECON-240',1,'MWF 8:00-8:50 a.m.','KLR 290',299);
+INSERT INTO microuniversity.class VALUES(22011,'ECON-240',2,'TTh 3:30-4:45 p.m.','KLR 290',425);
+INSERT INTO microuniversity.class VALUES(22020,'ECON-250',1,'Wed 6:00-8:40 p.m.','KLR 290',299);
+INSERT INTO microuniversity.class VALUES(23110,'MGT-340',1,'TTh 8:00-9:15 a.m.','KLR 152',191);
+INSERT INTO microuniversity.class VALUES(23111,'MGT-340',2,'Mon 6:00-8:40 p.m.','KLR 152',191);
+INSERT INTO microuniversity.class VALUES(23120,'MKT-360',1,'MWF 10:00-10:50 a.m.','KLR 152',191);
+INSERT INTO microuniversity.class VALUES(23121,'MKT-360',2,'Th 6:00-8:40 p.m.','KLR 152',106);
+INSERT INTO microuniversity.class VALUES(25000,'ENG-210',1,'MWF 1:00-1:50 p.m.','DRE 257',104);
+INSERT INTO microuniversity.class VALUES(25001,'ENG-210',2,'MWF 2:00-2:50 p.m.','DRE 257',104);
+INSERT INTO microuniversity.class VALUES(25002,'ENG-210',3,'TTH 12:30-1:45 p.m.','DRE 257',160);
+INSERT INTO microuniversity.class VALUES(25010,'SPCH-240',1,'MWF 8:00-8:50 a.m.','DRE 242',104);
+INSERT INTO microuniversity.class VALUES(25011,'SPCH-240',2,'TTh 3:30-4:45 p.m.','DRE 242',104);
+INSERT INTO microuniversity.class VALUES(30010,'PSYCH-200',1,'MWF 11:00-11:50 a.m.','AAK 244',195);
+INSERT INTO microuniversity.class VALUES(30110,'SOC-200',1,'TTH 8:00-9:15 a.m.','BBG 258',342);
+INSERT INTO microuniversity.class VALUES(32000,'HIST-210',1,'MWF 10:00-10:50 a.m.','DRE 144',103);
+INSERT INTO microuniversity.class VALUES(32001,'HIST-210',2,'MWF 1:00-1:50 p.m.','DRE 144',401);
+INSERT INTO microuniversity.class VALUES(32002,'HIST-210',3,'TTH 2:00-3:15 p.m.','DRE 144',401);
+INSERT INTO microuniversity.class VALUES(32011,'HIST-220',1,'MWF 11:00-11:50 a.m.','DRE 144',103);
+INSERT INTO microuniversity.class VALUES(40010,'MATH-120',1,'TTh 8:00-9:15 a.m.','AAK 200',155);
+INSERT INTO microuniversity.class VALUES(40011,'MATH-120',2,'MWF 11:00-11:50 a.m.','AAK 200',155);
+INSERT INTO microuniversity.class VALUES(40101,'MATH-243',1,'MWF 3:00-3:50 p.m.','AAK 202',297);
+INSERT INTO microuniversity.class VALUES(50021,'QM-261',1,'MWF 8:00-8:50 a.m.','KLR 200',228);
+INSERT INTO microuniversity.class VALUES(50022,'QM-261',2,'TTh 1:00-2:15 p.m.','KLR 200',228);
+INSERT INTO microuniversity.class VALUES(50023,'QM-362',1,'MWF 11:00-11:50 a.m.','KLR 200',162);
+INSERT INTO microuniversity.class VALUES(50024,'QM-362',2,'TTh 2:30-3:45 p.m.','KLR 200',162);
+CREATE TABLE microuniversity.student (
   STU_NUM INTEGER PRIMARY KEY NOT NULL,
   STU_LNAME VARCHAR(30) NOT NULL,
   STU_FNAME VARCHAR(20) NOT NULL,
@@ -185,195 +185,195 @@ CREATE TABLE sql_demo.student (
   DEPT_CODE VARCHAR(10) NOT NULL,
   STU_PHONE VARCHAR(10),
   EMP_NUM INTEGER NOT NULL,
-  FOREIGN KEY(DEPT_CODE) REFERENCES sql_demo.department(DEPT_CODE),
-  FOREIGN KEY(EMP_NUM) REFERENCES sql_demo.employee(EMP_NUM)
+  FOREIGN KEY(DEPT_CODE) REFERENCES microuniversity.department(DEPT_CODE),
+  FOREIGN KEY(EMP_NUM) REFERENCES microuniversity.employee(EMP_NUM)
 );
-INSERT INTO sql_demo.student VALUES(300245,'Peppard','Randy','K','1975-06-21',45,'So',2.61,0,'BIOL','2134',387);
-INSERT INTO sql_demo.student VALUES(311198,'Robertson','Anne','B','1970-11-15',93,'Jr',3.04,0,'CIS','2215',162);
-INSERT INTO sql_demo.student VALUES(311357,'Huizinga','Jan','H','1973-04-04',78,'Jr',2.02,0,'MKT/MGT',NULL,106);
-INSERT INTO sql_demo.student VALUES(319989,'Schloss','Heinz','D','1960-02-25',105,'Sr',3.45,0,'MKT/MGT','2617',106);
-INSERT INTO sql_demo.student VALUES(320367,'Grafton','Suzanna','A','1976-10-18',42,'So',2.81,0,'HIST',NULL,103);
-INSERT INTO sql_demo.student VALUES(321452,'Bowser','William','C','1972-02-12',57,'So',1.55,0,'BIOL','2134',387);
-INSERT INTO sql_demo.student VALUES(322345,'Wesson','Sidney',NULL,'1956-12-14',51,'So',3.91,0,'ACCT',NULL,301);
-INSERT INTO sql_demo.student VALUES(323119,'Papar','George','D','1970-04-04',108,'Sr',2.78,0,'MKT/MGT',NULL,106);
-INSERT INTO sql_demo.student VALUES(324257,'Smithson','Anne','K','1973-11-18',81,'Jr',2.02,1,'CIS','2256',209);
-INSERT INTO sql_demo.student VALUES(324258,'Brewer','Juliette',NULL,'1966-08-23',39,'So',3.48,1,'ACCT','2256',114);
-INSERT INTO sql_demo.student VALUES(324269,'Oblonski','Walter','H','1973-09-16',66,'Jr',2.17,0,'CIS','2114',162);
-INSERT INTO sql_demo.student VALUES(324273,'Smith','John','D','1955-12-30',102,'Sr',2.72,1,'MATH','2231',155);
-INSERT INTO sql_demo.student VALUES(324274,'Katinga','Raphael','P','1968-10-25',114,'Sr',2.91,0,'ACCT','2267',114);
-INSERT INTO sql_demo.student VALUES(324291,'Robertson','Gerald','T','1970-04-04',120,'Sr',2.45,0,'BIOL','2267',387);
-INSERT INTO sql_demo.student VALUES(324299,'Smith','John','B','1975-11-30',15,'Fr',1.75,0,'ACCT','2315',301);
-INSERT INTO sql_demo.student VALUES(324567,'Willow','Samuel','J','1979-07-12',0,'Fr',NULL,0,'BIOL',NULL,387);
-INSERT INTO sql_demo.student VALUES(325563,'Warren','Marie','L','1971-08-22',38,'So',2.42,0,'ACCT','2215',301);
-INSERT INTO sql_demo.student VALUES(326578,'Weston','George','D','1978-02-01',93,'Jr',2.09,0,'MKT/MGT',NULL,106);
-INSERT INTO sql_demo.student VALUES(327689,'Olenga','Leontine','K','1976-10-15',84,'Jr',3.12,0,'MKT/MGT','2215',106);
-INSERT INTO sql_demo.student VALUES(328799,'Smith','Robert','W','1950-04-08',102,'Sr',3.51,0,'BIOL',NULL,387);
-INSERT INTO sql_demo.student VALUES(328934,'Innugado','Carlos','R','1976-11-30',75,'Jr',2.38,1,'CIS','2617',228);
-INSERT INTO sql_demo.student VALUES(328993,'Jubilar','Anton','P','1958-10-29',108,'Sr',2.95,0,'ACCT',NULL,114);
-INSERT INTO sql_demo.student VALUES(330010,'Schlumberg','Georgette','A','1949-02-25',16,'Fr',3.21,0,'CIS',NULL,209);
-INSERT INTO sql_demo.student VALUES(330021,'Browning','William','C','1972-12-30',45,'So',1.53,0,'HIST','2617',103);
-INSERT INTO sql_demo.student VALUES(332345,'Paulus','Annelise','H','1974-01-05',108,'Sr',3.92,0,'MATH',NULL,155);
-INSERT INTO sql_demo.student VALUES(341101,'Richter','Ronald','G','1960-11-30',0,'Fr',NULL,0,'ART','2118',435);
-INSERT INTO sql_demo.student VALUES(341108,'Smith','Darren','K','1988-08-18',15,'Fr',2.45,1,'ENG','2257',160);
-INSERT INTO sql_demo.student VALUES(342715,'Alvarez','Marie','M','1987-04-19',51,'Jr',2.98,0,'ENG','2001',160);
-INSERT INTO sql_demo.student VALUES(342721,'Rutan','Robert','B','1981-02-02',42,'So',3.01,0,'ECON/FIN','2851',299);
-INSERT INTO sql_demo.student VALUES(342722,'Browning','Louise','A','1984-10-12',66,'Jr',3.72,0,'SOC',NULL,342);
-INSERT INTO sql_demo.student VALUES(342745,'Ularen','Warren','R','1975-09-23',99,'Sr',2.51,1,'PSYCH',NULL,195);
-INSERT INTO sql_demo.student VALUES(342748,'Perdurax','George','H','1970-05-27',45,'So',2.78,0,'ACCT','2119',301);
-INSERT INTO sql_demo.student VALUES(343749,'Brewton','John',NULL,'1966-05-01',51,'So',1.65,0,'CIS','2817',209);
-INSERT INTO sql_demo.student VALUES(345755,'Washington','Jeanine','K','1978-12-25',18,'Fr',2.87,1,'MKT/MGT','2555',191);
-INSERT INTO sql_demo.student VALUES(345758,'Johnson','Antoinette','E','1975-06-16',84,'Jr',3.45,0,'CIS',NULL,209);
-INSERT INTO sql_demo.student VALUES(345767,'Jones','Rupert','R','1975-03-19',78,'Jr',3.33,1,'ENG','2393',104);
-INSERT INTO sql_demo.student VALUES(345779,'Hernando','Kenna','D','1971-07-12',117,'Sr',3.88,0,'HIST','2904',401);
-INSERT INTO sql_demo.student VALUES(345783,'Boisseaux','LaRue','H','1979-11-28',39,'So',3.02,0,'ART',NULL,435);
-CREATE TABLE sql_demo.enroll (
+INSERT INTO microuniversity.student VALUES(300245,'Peppard','Randy','K','1975-06-21',45,'So',2.61,0,'BIOL','2134',387);
+INSERT INTO microuniversity.student VALUES(311198,'Robertson','Anne','B','1970-11-15',93,'Jr',3.04,0,'CIS','2215',162);
+INSERT INTO microuniversity.student VALUES(311357,'Huizinga','Jan','H','1973-04-04',78,'Jr',2.02,0,'MKT/MGT',NULL,106);
+INSERT INTO microuniversity.student VALUES(319989,'Schloss','Heinz','D','1960-02-25',105,'Sr',3.45,0,'MKT/MGT','2617',106);
+INSERT INTO microuniversity.student VALUES(320367,'Grafton','Suzanna','A','1976-10-18',42,'So',2.81,0,'HIST',NULL,103);
+INSERT INTO microuniversity.student VALUES(321452,'Bowser','William','C','1972-02-12',57,'So',1.55,0,'BIOL','2134',387);
+INSERT INTO microuniversity.student VALUES(322345,'Wesson','Sidney',NULL,'1956-12-14',51,'So',3.91,0,'ACCT',NULL,301);
+INSERT INTO microuniversity.student VALUES(323119,'Papar','George','D','1970-04-04',108,'Sr',2.78,0,'MKT/MGT',NULL,106);
+INSERT INTO microuniversity.student VALUES(324257,'Smithson','Anne','K','1973-11-18',81,'Jr',2.02,1,'CIS','2256',209);
+INSERT INTO microuniversity.student VALUES(324258,'Brewer','Juliette',NULL,'1966-08-23',39,'So',3.48,1,'ACCT','2256',114);
+INSERT INTO microuniversity.student VALUES(324269,'Oblonski','Walter','H','1973-09-16',66,'Jr',2.17,0,'CIS','2114',162);
+INSERT INTO microuniversity.student VALUES(324273,'Smith','John','D','1955-12-30',102,'Sr',2.72,1,'MATH','2231',155);
+INSERT INTO microuniversity.student VALUES(324274,'Katinga','Raphael','P','1968-10-25',114,'Sr',2.91,0,'ACCT','2267',114);
+INSERT INTO microuniversity.student VALUES(324291,'Robertson','Gerald','T','1970-04-04',120,'Sr',2.45,0,'BIOL','2267',387);
+INSERT INTO microuniversity.student VALUES(324299,'Smith','John','B','1975-11-30',15,'Fr',1.75,0,'ACCT','2315',301);
+INSERT INTO microuniversity.student VALUES(324567,'Willow','Samuel','J','1979-07-12',0,'Fr',NULL,0,'BIOL',NULL,387);
+INSERT INTO microuniversity.student VALUES(325563,'Warren','Marie','L','1971-08-22',38,'So',2.42,0,'ACCT','2215',301);
+INSERT INTO microuniversity.student VALUES(326578,'Weston','George','D','1978-02-01',93,'Jr',2.09,0,'MKT/MGT',NULL,106);
+INSERT INTO microuniversity.student VALUES(327689,'Olenga','Leontine','K','1976-10-15',84,'Jr',3.12,0,'MKT/MGT','2215',106);
+INSERT INTO microuniversity.student VALUES(328799,'Smith','Robert','W','1950-04-08',102,'Sr',3.51,0,'BIOL',NULL,387);
+INSERT INTO microuniversity.student VALUES(328934,'Innugado','Carlos','R','1976-11-30',75,'Jr',2.38,1,'CIS','2617',228);
+INSERT INTO microuniversity.student VALUES(328993,'Jubilar','Anton','P','1958-10-29',108,'Sr',2.95,0,'ACCT',NULL,114);
+INSERT INTO microuniversity.student VALUES(330010,'Schlumberg','Georgette','A','1949-02-25',16,'Fr',3.21,0,'CIS',NULL,209);
+INSERT INTO microuniversity.student VALUES(330021,'Browning','William','C','1972-12-30',45,'So',1.53,0,'HIST','2617',103);
+INSERT INTO microuniversity.student VALUES(332345,'Paulus','Annelise','H','1974-01-05',108,'Sr',3.92,0,'MATH',NULL,155);
+INSERT INTO microuniversity.student VALUES(341101,'Richter','Ronald','G','1960-11-30',0,'Fr',NULL,0,'ART','2118',435);
+INSERT INTO microuniversity.student VALUES(341108,'Smith','Darren','K','1988-08-18',15,'Fr',2.45,1,'ENG','2257',160);
+INSERT INTO microuniversity.student VALUES(342715,'Alvarez','Marie','M','1987-04-19',51,'Jr',2.98,0,'ENG','2001',160);
+INSERT INTO microuniversity.student VALUES(342721,'Rutan','Robert','B','1981-02-02',42,'So',3.01,0,'ECON/FIN','2851',299);
+INSERT INTO microuniversity.student VALUES(342722,'Browning','Louise','A','1984-10-12',66,'Jr',3.72,0,'SOC',NULL,342);
+INSERT INTO microuniversity.student VALUES(342745,'Ularen','Warren','R','1975-09-23',99,'Sr',2.51,1,'PSYCH',NULL,195);
+INSERT INTO microuniversity.student VALUES(342748,'Perdurax','George','H','1970-05-27',45,'So',2.78,0,'ACCT','2119',301);
+INSERT INTO microuniversity.student VALUES(343749,'Brewton','John',NULL,'1966-05-01',51,'So',1.65,0,'CIS','2817',209);
+INSERT INTO microuniversity.student VALUES(345755,'Washington','Jeanine','K','1978-12-25',18,'Fr',2.87,1,'MKT/MGT','2555',191);
+INSERT INTO microuniversity.student VALUES(345758,'Johnson','Antoinette','E','1975-06-16',84,'Jr',3.45,0,'CIS',NULL,209);
+INSERT INTO microuniversity.student VALUES(345767,'Jones','Rupert','R','1975-03-19',78,'Jr',3.33,1,'ENG','2393',104);
+INSERT INTO microuniversity.student VALUES(345779,'Hernando','Kenna','D','1971-07-12',117,'Sr',3.88,0,'HIST','2904',401);
+INSERT INTO microuniversity.student VALUES(345783,'Boisseaux','LaRue','H','1979-11-28',39,'So',3.02,0,'ART',NULL,435);
+CREATE TABLE microuniversity.enroll (
   CLASS_CODE INTEGER NOT NULL,
   STU_NUM INTEGER NOT NULL,
   ENROLL_GRADE VARCHAR(2),
   ENROLL_CREDIT INTEGER NOT NULL CHECK (ENROLL_CREDIT > 0),
   PRIMARY KEY (CLASS_CODE, STU_NUM),
-  FOREIGN KEY(CLASS_CODE) REFERENCES sql_demo.class(CLASS_CODE),
-  FOREIGN KEY(STU_NUM) REFERENCES sql_demo.student(STU_NUM)
+  FOREIGN KEY(CLASS_CODE) REFERENCES microuniversity.class(CLASS_CODE),
+  FOREIGN KEY(STU_NUM) REFERENCES microuniversity.student(STU_NUM)
 );
-INSERT INTO sql_demo.enroll VALUES(10012,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10012,311357,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10012,322345,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10012,324274,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10012,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10013,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10013,325563,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10014,319989,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10014,321452,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10014,324257,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10016,320367,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10016,327689,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10016,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10016,345758,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10017,324269,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10017,328934,'-',3);
-INSERT INTO sql_demo.enroll VALUES(10017,328993,'-',3);
-INSERT INTO sql_demo.enroll VALUES(12001,321452,'-',3);
-INSERT INTO sql_demo.enroll VALUES(12001,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(12001,345783,'-',3);
-INSERT INTO sql_demo.enroll VALUES(12002,320367,'-',3);
-INSERT INTO sql_demo.enroll VALUES(12002,328934,'-',3);
-INSERT INTO sql_demo.enroll VALUES(15020,345783,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15021,320367,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15021,321452,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15021,324274,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15021,330021,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15022,322345,'-',4);
-INSERT INTO sql_demo.enroll VALUES(15022,327689,'-',4);
-INSERT INTO sql_demo.enroll VALUES(20017,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20017,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20018,311357,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20018,322345,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20019,321452,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20019,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20019,325563,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20025,345758,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20030,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20030,324257,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20030,328934,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20030,345758,'-',3);
-INSERT INTO sql_demo.enroll VALUES(20040,324269,'-',4);
-INSERT INTO sql_demo.enroll VALUES(20040,328993,'-',4);
-INSERT INTO sql_demo.enroll VALUES(22011,327689,'-',3);
-INSERT INTO sql_demo.enroll VALUES(22011,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(22020,321452,'-',3);
-INSERT INTO sql_demo.enroll VALUES(22020,324274,'-',3);
-INSERT INTO sql_demo.enroll VALUES(22020,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23110,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23110,311357,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23110,324257,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23110,345758,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23111,324269,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23111,328993,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23120,327689,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23121,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23121,328934,'-',3);
-INSERT INTO sql_demo.enroll VALUES(23121,328993,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25000,320367,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25000,345783,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25001,330021,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25002,311357,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25002,322345,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25002,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25002,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25010,325563,'-',3);
-INSERT INTO sql_demo.enroll VALUES(25011,345783,'-',3);
-INSERT INTO sql_demo.enroll VALUES(30010,320367,'-',3);
-INSERT INTO sql_demo.enroll VALUES(30010,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(30110,322345,'-',3);
-INSERT INTO sql_demo.enroll VALUES(30110,324274,'-',3);
-INSERT INTO sql_demo.enroll VALUES(30110,330021,'-',3);
-INSERT INTO sql_demo.enroll VALUES(32000,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(32000,345783,'-',3);
-INSERT INTO sql_demo.enroll VALUES(32001,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(32002,325563,'-',3);
-INSERT INTO sql_demo.enroll VALUES(32002,330021,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40010,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40010,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40010,345783,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40011,322345,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40011,325563,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40011,330021,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40101,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40101,311357,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40101,324257,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40101,324269,'-',3);
-INSERT INTO sql_demo.enroll VALUES(40101,324274,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50021,324258,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50022,311198,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50022,327689,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50022,342721,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50022,343749,'-',3);
-INSERT INTO sql_demo.enroll VALUES(50023,324257,'-',4);
-INSERT INTO sql_demo.enroll VALUES(50023,324269,'-',4);
-INSERT INTO sql_demo.enroll VALUES(50024,311357,'-',4);
-INSERT INTO sql_demo.enroll VALUES(50024,324274,'-',4);
-INSERT INTO sql_demo.enroll VALUES(50024,328934,'-',4);
-INSERT INTO sql_demo.enroll VALUES(50024,345758,'-',4);
-CREATE TABLE sql_demo.professor (
+INSERT INTO microuniversity.enroll VALUES(10012,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10012,311357,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10012,322345,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10012,324274,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10012,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10013,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10013,325563,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10014,319989,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10014,321452,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10014,324257,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10016,320367,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10016,327689,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10016,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10016,345758,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10017,324269,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10017,328934,'-',3);
+INSERT INTO microuniversity.enroll VALUES(10017,328993,'-',3);
+INSERT INTO microuniversity.enroll VALUES(12001,321452,'-',3);
+INSERT INTO microuniversity.enroll VALUES(12001,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(12001,345783,'-',3);
+INSERT INTO microuniversity.enroll VALUES(12002,320367,'-',3);
+INSERT INTO microuniversity.enroll VALUES(12002,328934,'-',3);
+INSERT INTO microuniversity.enroll VALUES(15020,345783,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15021,320367,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15021,321452,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15021,324274,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15021,330021,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15022,322345,'-',4);
+INSERT INTO microuniversity.enroll VALUES(15022,327689,'-',4);
+INSERT INTO microuniversity.enroll VALUES(20017,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20017,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20018,311357,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20018,322345,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20019,321452,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20019,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20019,325563,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20025,345758,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20030,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20030,324257,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20030,328934,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20030,345758,'-',3);
+INSERT INTO microuniversity.enroll VALUES(20040,324269,'-',4);
+INSERT INTO microuniversity.enroll VALUES(20040,328993,'-',4);
+INSERT INTO microuniversity.enroll VALUES(22011,327689,'-',3);
+INSERT INTO microuniversity.enroll VALUES(22011,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(22020,321452,'-',3);
+INSERT INTO microuniversity.enroll VALUES(22020,324274,'-',3);
+INSERT INTO microuniversity.enroll VALUES(22020,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23110,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23110,311357,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23110,324257,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23110,345758,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23111,324269,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23111,328993,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23120,327689,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23121,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23121,328934,'-',3);
+INSERT INTO microuniversity.enroll VALUES(23121,328993,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25000,320367,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25000,345783,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25001,330021,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25002,311357,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25002,322345,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25002,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25002,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25010,325563,'-',3);
+INSERT INTO microuniversity.enroll VALUES(25011,345783,'-',3);
+INSERT INTO microuniversity.enroll VALUES(30010,320367,'-',3);
+INSERT INTO microuniversity.enroll VALUES(30010,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(30110,322345,'-',3);
+INSERT INTO microuniversity.enroll VALUES(30110,324274,'-',3);
+INSERT INTO microuniversity.enroll VALUES(30110,330021,'-',3);
+INSERT INTO microuniversity.enroll VALUES(32000,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(32000,345783,'-',3);
+INSERT INTO microuniversity.enroll VALUES(32001,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(32002,325563,'-',3);
+INSERT INTO microuniversity.enroll VALUES(32002,330021,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40010,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40010,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40010,345783,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40011,322345,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40011,325563,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40011,330021,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40101,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40101,311357,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40101,324257,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40101,324269,'-',3);
+INSERT INTO microuniversity.enroll VALUES(40101,324274,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50021,324258,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50022,311198,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50022,327689,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50022,342721,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50022,343749,'-',3);
+INSERT INTO microuniversity.enroll VALUES(50023,324257,'-',4);
+INSERT INTO microuniversity.enroll VALUES(50023,324269,'-',4);
+INSERT INTO microuniversity.enroll VALUES(50024,311357,'-',4);
+INSERT INTO microuniversity.enroll VALUES(50024,324274,'-',4);
+INSERT INTO microuniversity.enroll VALUES(50024,328934,'-',4);
+INSERT INTO microuniversity.enroll VALUES(50024,345758,'-',4);
+CREATE TABLE microuniversity.professor (
   EMP_NUM INTEGER PRIMARY KEY NOT NULL,
   DEPT_CODE VARCHAR(10) NOT NULL,
   PROF_OFFICE VARCHAR(20) NOT NULL,
   PROF_EXTENSION VARCHAR(4) NOT NULL,
   PROF_HIGH_DEGREE VARCHAR(15) NOT NULL,
-  FOREIGN KEY(DEPT_CODE) REFERENCES sql_demo.department(DEPT_CODE),
-  FOREIGN KEY(EMP_NUM) REFERENCES sql_demo.employee(EMP_NUM)
+  FOREIGN KEY(DEPT_CODE) REFERENCES microuniversity.department(DEPT_CODE),
+  FOREIGN KEY(EMP_NUM) REFERENCES microuniversity.employee(EMP_NUM)
 );
-INSERT INTO sql_demo.professor VALUES(103,'HIST','DRE 156','6783','Ph.D');
-INSERT INTO sql_demo.professor VALUES(104,'ENG','DRE 102','5561','MA');
-INSERT INTO sql_demo.professor VALUES(105,'ACCT','KLR 229D','8665','Ph.D');
-INSERT INTO sql_demo.professor VALUES(106,'MKT/MGT','KLR 126','3899','Ph.D');
-INSERT INTO sql_demo.professor VALUES(110,'BIOL','AAK 160','3412','Ph.D');
-INSERT INTO sql_demo.professor VALUES(114,'ACCT','KLR 211','4436','Ph.D');
-INSERT INTO sql_demo.professor VALUES(155,'MATH','AAK 201','4440','Ph.D');
-INSERT INTO sql_demo.professor VALUES(160,'ENG','DRE 102','2248','Ph.D');
-INSERT INTO sql_demo.professor VALUES(162,'CIS','KLR 203E','2359','Ph.D');
-INSERT INTO sql_demo.professor VALUES(191,'MKT/MGT','KLR 409B','4016','DBA');
-INSERT INTO sql_demo.professor VALUES(195,'PSYCH','AAK 297','3550','Ph.D');
-INSERT INTO sql_demo.professor VALUES(209,'CIS','KLR 333','3421','Ph.D');
-INSERT INTO sql_demo.professor VALUES(228,'CIS','KLR 300','3000','Ph.D');
-INSERT INTO sql_demo.professor VALUES(297,'MATH','AAK 194','1145','Ph.D');
-INSERT INTO sql_demo.professor VALUES(299,'ECON/FIN','KLR 284','2851','Ph.D');
-INSERT INTO sql_demo.professor VALUES(301,'ACCT','KLR 244','4683','Ph.D');
-INSERT INTO sql_demo.professor VALUES(335,'ENG','DRE 208','2000','Ph.D');
-INSERT INTO sql_demo.professor VALUES(342,'SOC','BBG 208','5514','Ph.D');
-INSERT INTO sql_demo.professor VALUES(387,'BIOL','AAK 230','8665','Ph.D');
-INSERT INTO sql_demo.professor VALUES(401,'HIST','DRE 156','6783','MA');
-INSERT INTO sql_demo.professor VALUES(425,'ECON/FIN','KLR 284','2851','MBA');
-INSERT INTO sql_demo.professor VALUES(435,'ART','BBG 185','2278','Ph.D');
+INSERT INTO microuniversity.professor VALUES(103,'HIST','DRE 156','6783','Ph.D');
+INSERT INTO microuniversity.professor VALUES(104,'ENG','DRE 102','5561','MA');
+INSERT INTO microuniversity.professor VALUES(105,'ACCT','KLR 229D','8665','Ph.D');
+INSERT INTO microuniversity.professor VALUES(106,'MKT/MGT','KLR 126','3899','Ph.D');
+INSERT INTO microuniversity.professor VALUES(110,'BIOL','AAK 160','3412','Ph.D');
+INSERT INTO microuniversity.professor VALUES(114,'ACCT','KLR 211','4436','Ph.D');
+INSERT INTO microuniversity.professor VALUES(155,'MATH','AAK 201','4440','Ph.D');
+INSERT INTO microuniversity.professor VALUES(160,'ENG','DRE 102','2248','Ph.D');
+INSERT INTO microuniversity.professor VALUES(162,'CIS','KLR 203E','2359','Ph.D');
+INSERT INTO microuniversity.professor VALUES(191,'MKT/MGT','KLR 409B','4016','DBA');
+INSERT INTO microuniversity.professor VALUES(195,'PSYCH','AAK 297','3550','Ph.D');
+INSERT INTO microuniversity.professor VALUES(209,'CIS','KLR 333','3421','Ph.D');
+INSERT INTO microuniversity.professor VALUES(228,'CIS','KLR 300','3000','Ph.D');
+INSERT INTO microuniversity.professor VALUES(297,'MATH','AAK 194','1145','Ph.D');
+INSERT INTO microuniversity.professor VALUES(299,'ECON/FIN','KLR 284','2851','Ph.D');
+INSERT INTO microuniversity.professor VALUES(301,'ACCT','KLR 244','4683','Ph.D');
+INSERT INTO microuniversity.professor VALUES(335,'ENG','DRE 208','2000','Ph.D');
+INSERT INTO microuniversity.professor VALUES(342,'SOC','BBG 208','5514','Ph.D');
+INSERT INTO microuniversity.professor VALUES(387,'BIOL','AAK 230','8665','Ph.D');
+INSERT INTO microuniversity.professor VALUES(401,'HIST','DRE 156','6783','MA');
+INSERT INTO microuniversity.professor VALUES(425,'ECON/FIN','KLR 284','2851','MBA');
+INSERT INTO microuniversity.professor VALUES(435,'ART','BBG 185','2278','Ph.D');
 
 -- SQL Editor and privileged database connections can still access these tables.
 -- No anonymous/authenticated Data API policies are granted by this script.
-ALTER TABLE sql_demo.course ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.employee ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.student ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.department ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.enroll ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.professor ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.class ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sql_demo.school ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.course ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.employee ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.student ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.department ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.enroll ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.professor ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.class ENABLE ROW LEVEL SECURITY;
+ALTER TABLE microuniversity.school ENABLE ROW LEVEL SECURITY;
 COMMIT;
