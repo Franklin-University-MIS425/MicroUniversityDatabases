@@ -4,15 +4,31 @@ This repository contains the MicroUniversity sample dataset: eight related table
 
 ## Start here: Supabase
 
+**Homework 2 requires CSV imports.** Follow the assignment for that workflow; the SQL script below demonstrates a second import method and does not replace the CSV requirement. Use separate schemas when comparing both methods.
+
 You can create your own **free Supabase account using your Franklin email address** and begin without waiting for an invitation. The instructor plans to send a separate invitation to a reference database setup; that invitation is for viewing the instructor's example.
 
 1. Sign up at [Supabase](https://supabase.com/) using your Franklin email. Choose the Free plan and create a project for your coursework. Keep the database password private.
 2. Open [`supabase.sql`](supabase.sql) in this repository and copy the complete file. On GitHub, use **Raw** to view just the SQL text.
-3. Open your project's **SQL Editor**, create a new query, paste the complete script, and run it. Use a new project or a database without these eight tables.
-4. Open **Table Editor** and select the `public` schema. PostgreSQL stores these unquoted table and column names in lowercase: for example, `student` and `stu_num`.
+3. Open your project's **SQL Editor**, create a new query, paste the complete script, and run it. The script creates the `sql_demo` schema if needed. That schema must not already contain these eight tables.
+4. Open **Table Editor** and select the `sql_demo` schema. PostgreSQL stores these unquoted table and column names in lowercase: for example, `student` and `stu_num`.
 5. Run [`verify.sql`](verify.sql) in SQL Editor. Every `actual_rows` value should match `expected_rows` in the result.
 
-The setup includes both the table definitions and the sample rows. You do not also need to import the CSV files. Run the whole script together: it uses a transaction so a failed setup does not leave a partially loaded database. If a table already exists, the script stops without replacing it. If SQL Editor reports an aborted transaction, run `ROLLBACK;` before trying another query. Do not delete your existing work just to repeat setup.
+The setup includes both the table definitions and the sample rows. For this SQL demonstration, do not also import the CSV files into `sql_demo`; use a separate schema for the assigned CSV workflow. Run the whole script together, with no partial text selection. It uses a transaction to keep table creation and inserts together. If a run fails, issue `ROLLBACK;` before retrying; do not assume an error means a previous run created no tables. If a table already exists, the script stops without replacing it. Do not delete your existing work just to repeat setup.
+
+### Organize tables with schemas
+
+A schema is a named group of tables inside the project's database. Use `microuniversity` for your CSV coursework, then another schema for your final project. In **Table Editor**, open the schema dropdown and choose **Create a new schema**, enter the name, and save. You can also use SQL Editor:
+
+```sql
+CREATE SCHEMA IF NOT EXISTS microuniversity;
+```
+
+Select the intended schema before importing CSV files. Selecting a schema in Table Editor does not change where a SQL script creates its tables. This repository's `supabase.sql` explicitly targets `sql_demo` throughout, including foreign keys and row-level security statements. To adapt it to another schema, consistently replace every `sql_demo` reference in both `supabase.sql` and `verify.sql`.
+
+If you imported an earlier version into `public`, those tables stay there. This script neither moves nor deletes them. Check the Table Editor schema dropdown before assuming tables are missing. An “already exists” error means the setup is being run against an existing object; use SELECT queries to inspect the data rather than rerunning CREATE TABLE.
+
+Unquoted SQL names become lowercase. A CSV-created table named `EMPLOYEE` requires `microuniversity."EMPLOYEE"`; the SQL-created table is `sql_demo.employee`.
 
 ### Ask for help
 
@@ -29,6 +45,8 @@ Use [Franklin University’s hosted Appsmith environment](https://franklinuniv.d
 If you see a trial-expiration warning, first check that you are using the Franklin URL above. If the warning or an access error persists there, send the instructor the URL, workspace name, and exact message.
 
 The Supabase script enables row-level security on all eight tables and does not grant public Data API access. You can inspect and query the data in SQL Editor. An Appsmith PostgreSQL datasource uses a database connection; its access depends on the database role used. Use the connection details from your project's **Connect** dialog and the course demonstration. Keep connection credentials in the datasource settings, not in page widgets, browser JavaScript, or GitHub. If you instead use the Supabase REST API, appropriate grants and row-level policies are a separate setup step; do not disable security just to make a request succeed.
+
+In Appsmith SQL queries, use schema-qualified names such as `sql_demo.course`. Keep the database name from the Connect dialog in the datasource configuration; a schema name is not a database name. The same datasource can query other schemas when its database role has the required permissions.
 
 [Supabase row-level security documentation](https://supabase.com/docs/guides/database/postgres/row-level-security)
 
@@ -47,15 +65,15 @@ The CSV files are the original interchange format, with uppercase headers and mo
 7. `enroll.csv`
 8. `professor.csv`
 
-For Supabase, the single `supabase.sql` script is the simpler recommended route and uses unambiguous ISO dates (`YYYY-MM-DD`).
+For the SQL import demonstration, `supabase.sql` creates and loads `sql_demo` using unambiguous ISO dates (`YYYY-MM-DD`). For Homework 2, complete the assigned CSV imports in your own schema, such as `microuniversity`.
 
 ## Files and database engines
 
 | File | Purpose |
 | --- | --- |
-| `supabase.sql` | PostgreSQL/Supabase schema and all sample rows; recommended for MIS 425 Supabase setup |
+| `supabase.sql` | PostgreSQL/Supabase tables and all sample rows in `sql_demo`; SQL import demonstration |
 | `database.sql` | SQLite schema and sample rows; not a Supabase script |
-| `verify.sql` | Read-only PostgreSQL row-count check |
+| `verify.sql` | Read-only PostgreSQL row-count check for `sql_demo` |
 | `*.csv` | Individual sample tables for inspection or manual import |
 
 Both setup scripts are for initial creation. Neither deletes existing tables. The SQLite script enables foreign-key enforcement for its connection; SQLite applications must enable it on each subsequent connection too.
@@ -82,10 +100,10 @@ The PostgreSQL version also checks nonnegative student hours, GPA from 0 to 4 (o
 ```sql
 SELECT s.stu_num, s.stu_fname, s.stu_lname,
        c.crs_code, c.crs_description, e.enroll_grade
-FROM student AS s
-JOIN enroll AS e ON e.stu_num = s.stu_num
-JOIN class AS cl ON cl.class_code = e.class_code
-JOIN course AS c ON c.crs_code = cl.crs_code
+FROM sql_demo.student AS s
+JOIN sql_demo.enroll AS e ON e.stu_num = s.stu_num
+JOIN sql_demo.class AS cl ON cl.class_code = e.class_code
+JOIN sql_demo.course AS c ON c.crs_code = cl.crs_code
 ORDER BY s.stu_num, cl.class_code;
 ```
 
